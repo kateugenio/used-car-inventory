@@ -60,9 +60,11 @@ bundle exec rails s
 From your browser, head to localhost:3000
 
 Login as user manager:
+
 username: used-car-manager@example.com
 password: password
 
 Login as admin:
-username: admin
+
+username: admin@exampple.com
 password: password
