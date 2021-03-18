@@ -1,0 +1,10 @@
+<h1>Showing: <%= @vehicle.make %> <%= @vehicle.model %></h1>
+
+<p>Year: <%= @vehicle.year %></p>
+<p>Mileage: <%= @vehicle.mileage %></p>
+<p>Condition: <%= @vehicle.condition %></p>
+<p>Location: <%= @vehicle.location %></p>
+<p>Initial Price: <%= number_to_currency(@vehicle.initial_price) %></p>
+<p>Current Price: <%= number_to_currency(@vehicle.current_price) %></p>
+
+<%= link_to 'Back to Vehicles Index', vehicles_path %>

@@ -1,0 +1,70 @@
+<h1>Add new vehicle</h1>
+
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
+<%= form_with model: @vehicle, local: true do |form| %>
+  <div>
+    <%= form.label :make %>
+    <%= form.text_field :make %>
+    <% @vehicle.errors.full_messages_for(:make).each do |message| %>
+      <div class="form-error-field"><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :model %>
+    <%= form.text_field :model  %>
+    <% @vehicle.errors.full_messages_for(:model).each do |message| %>
+      <div class="form-error-field"><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :year %>
+    <%= form.text_field :year  %>
+    <% @vehicle.errors.full_messages_for(:year).each do |message| %>
+      <div class="form-error-field"><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :mileage %>
+    <%= form.text_field :mileage  %>
+    <% @vehicle.errors.full_messages_for(:mileage).each do |message| %>
+      <div class="form-error-field"><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :condition %>
+    <%= form.select(:condition, Vehicle::CONDITIONS) %>
+    <% @vehicle.errors.full_messages_for(:condition).each do |message| %>
+      <div class="form-error-field"><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :location %>
+    <%= form.text_field :location  %>
+    <% @vehicle.errors.full_messages_for(:location).each do |message| %>
+      <div class="form-error-field"><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :initial_price, 'Price' %>
+    <%= form.text_field :initial_price  %>
+    <% @vehicle.errors.full_messages_for(:initial_price).each do |message| %>
+      <div class="form-error-field"><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= link_to "Cancel", root_path  %>
+    <%= form.submit "Submit" %>
+  </div>
+<% end %>
