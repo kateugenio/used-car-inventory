@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   authenticated :user do
-    root 'dashboard#home', as: :authenticated_root
+    root 'vehicles#index', as: :authenticated_root
   end
-  root 'dashboard#home'
-  get 'dashboard/home'
+  root 'vehicles#index'
+  
+  resources :vehicles
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
