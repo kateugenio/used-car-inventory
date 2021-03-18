@@ -30,18 +30,28 @@ bundle install
 bundle exec rails db:setup
 ```
 
-## Development
+## Yarn
+Make sure you have yarn installed:
+```
+npm install --global yarn
+# You may need to update yark packages, if so, run:
+yarn install --check-files
+```
 
-### Run Specs
-```
-bundle exec rspec
-```
+## Development
 
 ## Seeds
 Create a user and admin:
 ```
 bundle exec rails db:seed
 ```
+
+### Run Specs
+```
+bundle exec rspec
+```
+
+## Start the app
 
 To start the local server:
 ```
